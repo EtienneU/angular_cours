@@ -1,0 +1,22 @@
+.container{
+    max-width: 1900px !important;
+  }
+
+  img{
+    max-height: 70px;
+  }
+
+  .bg-pour-ce-site {
+    background-color: #5d81ad;
+}
+
+li.page-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid white;
+  cursor: pointer;
+  width: 40px !important;
+  height: 40px !important;
+  background-color: #5d81ad;
+}

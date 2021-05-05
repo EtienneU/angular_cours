@@ -1,0 +1,22 @@
+div button {
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 5px 30px;
+    color: white;
+    background-color: #5d81ad;
+    border: 3px solid black;
+    transition: background-color .3s;
+}
+
+div button:hover {
+    background-color: #173861;
+}
+
+.shadow-beaugoss {
+    -webkit-box-shadow: 5px 8px 14px 0px rgba(39,33,255,0.24); 
+    box-shadow: 5px 8px 14px 0px rgba(39,33,255,0.24);
+}
+
+img {
+    border: 3px solid black;
+}

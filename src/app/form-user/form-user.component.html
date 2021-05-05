@@ -1,0 +1,161 @@
+<form #userFormAdd="ngForm" (ngSubmit)="submitUser()">
+
+    <!-- #######################################
+    ################# NAME ################
+    ######################################## -->
+    <div class="row g-3 align-items-baseline py-3">
+        <div class="col-auto" style="min-width: 150px;">
+            <label for="name" class="col-form-label font-weight-bold"><i class="fa fa-exclamation-circle mr-1"></i> Full Name</label>
+        </div>
+        <div class="col-auto">
+            <input type="text" id="name" class="form-control" aria-describedby="Name"  
+            placeholder="FirstName + LastName" 
+            style="min-width:300px;"
+            [(ngModel)]="user.name" #name="ngModel" 
+            pattern="\s*(\S\s*){6,}"
+            name="name"
+            required>
+        </div>
+        <div class="col-auto">
+            <span id="passwordHelpInline" class="form-text">
+                    Must be at least 6 characters.
+            </span>
+        </div>
+        <div [hidden]="name.valid || name.pristine" class="bg-danger text-white p-2">
+            There is not enough character in the firstName.
+        </div>
+    </div>
+
+    <!-- #######################################
+    ################# NAT ID ###################
+    ######################################## -->
+    <div class="row g-3 align-items-baseline py-3">
+        <div class="col-auto" style="min-width: 150px;">
+            <label for="natId" class="col-form-label font-weight-bold"><i class="fa fa-exclamation-circle mr-1"></i> National ID</label>
+        </div>
+        <div class="col-auto">
+            <input type="number" id="natId" class="form-control" aria-describedby="National ID"  
+            placeholder="National ID number" 
+            [(ngModel)]="user.natID" #natId="ngModel" 
+            pattern="^[0-9]{4,}$"
+            name="natId"
+            required>
+        </div>
+        <div class="col-auto">
+            <span id="passwordHelpInline" class="form-text">
+                    Must be at least 4 numbers.
+            </span>
+        </div>
+        <div [hidden]="natId.valid || natId.pristine" class="bg-danger text-white p-2">
+            There is not enough numbers.
+        </div>
+    </div>
+
+    <!-- #######################################
+    ################# BIRTHDATE ###################
+    ######################################## -->
+    <div class="row g-3 align-items-baseline py-3">
+        <div class="col-auto" style="min-width: 150px;">
+            <label for="birthDate" class="col-form-label font-weight-bold">Birthdate</label>
+        </div>
+        <div class="col-auto">
+            <input type="date" id="birthDate" class="form-control" aria-describedby="Birthdate"
+
+            [ngModel] ="user.birthDate | date:'yyyy-MM-dd'" (ngModelChange)="user.birthDate = $event"
+            #birthDate="ngModel" 
+            name="birthDate"
+            >
+        </div>
+    </div>
+
+    <!-- #######################################
+    ################# ADDRESS ###################
+    ######################################## -->
+    <div class="row g-3 align-items-baseline py-3">
+        <div class="col-auto" style="min-width: 150px;">
+            <label for="address" class="col-form-label font-weight-bold">Address</label>
+        </div>
+        <div class="col-auto">
+            <input type="text" id="address" class="form-control" aria-describedby="Address"  
+            style="min-width: 450px;" 
+            placeholder="Full address"
+            [(ngModel)]="user.address" #address="ngModel" 
+            name="address"
+            >
+        </div>
+    </div>
+      
+
+    <!-- #######################################
+    ################# COMPANY ###################
+    ######################################## -->
+    <div class="row g-3 align-items-baseline py-3">
+        <div class="col-auto" style="min-width: 150px;">
+            <label for="company" class="col-form-label font-weight-bold">Company</label>
+        </div>
+        <div class="col-auto">
+            <input type="text" id="company" class="form-control" aria-describedby="Company"   
+            placeholder="Company Name"
+            [(ngModel)]="user.company" #company="ngModel" 
+            name="company"
+            >
+        </div>
+    </div>
+
+
+    <!-- #######################################
+    ################# EMAIL ###################
+    ######################################## -->
+    <div class="row g-3 align-items-baseline py-3">
+        <div class="col-auto" style="min-width: 150px;">
+            <label for="email" class="col-form-label font-weight-bold"><i class="fa fa-exclamation-circle mr-1"></i> Email</label>
+        </div>
+        <div class="col-auto" style="min-width: 320px;">
+            <input type="text" id="email" class="form-control" aria-describedby="Email"   
+            placeholder="Your email"
+            [(ngModel)]="user.email" #email="ngModel" 
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            name="email"
+            required>
+        </div>
+        <div [hidden]="email.valid || email.pristine" class="bg-danger text-white p-2">
+            The email format is not valid.
+        </div>
+    </div>
+
+
+    <!-- #######################################
+    ################# PHONE ###################
+    ######################################## -->
+    <div class="row g-3 align-items-baseline py-3">
+        <div class="col-auto" style="min-width: 150px;">
+            <label for="phone" class="col-form-label font-weight-bold">Phone</label>
+        </div>
+        <div class="col-auto" style="min-width: 320px;">
+            <input type="text" id="phone" class="form-control" aria-describedby="Phone"  
+            placeholder="Phone number" 
+            [(ngModel)]="user.phone" #phone="ngModel" 
+            name="phone"
+            >
+        </div>
+    </div>
+
+    <!-- #######################################
+    ################# PICTURE ###################
+    ######################################## -->
+    <div class="row g-3 align-items-baseline py-3">
+        <div class="col-auto" style="min-width: 150px;">
+            <label for="picture" class="col-form-label font-weight-bold">Picture</label>
+        </div>
+        <div class="col-auto" style="min-width: 320px;">
+            <input type="url" id="picture" class="form-control" aria-describedby="Picture" 
+            placeholder="Url of your picture"
+            [(ngModel)]="user.picture" #picture="ngModel" 
+            name="picture"
+            >
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-4" [disabled]="!userFormAdd.form.valid">Validate</button>
+
+</form>

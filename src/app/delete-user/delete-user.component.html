@@ -1,0 +1,13 @@
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-align">
+        <h4 class="modal-title" id="exampleModalLongTitle">Confirm deletion of {{ user.name }} ?</h4>
+      </div>
+      <div class="modal-footer d-flex justify-content-around">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary"  (click)="delete(user)" data-dismiss="modal">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
